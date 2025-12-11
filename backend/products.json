@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Laptop Gaming ROG",
+    "category": "Elektronik",
+    "price": 15000000,
+    "stock": 5,
+    "description": "Laptop spek dewa untuk gaming rata kanan."
+  },
+  {
+    "name": "Kursi Ergonomis",
+    "category": "Furniture",
+    "price": 2500000,
+    "stock": 10,
+    "description": "Anti sakit pinggang, cocok buat WFH."
+  },
+  {
+    "name": "Mouse Wireless",
+    "category": "Elektronik",
+    "price": 150000,
+    "stock": 50,
+    "description": "Mouse murah meriah baterai awet."
+  }
+]

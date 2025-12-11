@@ -1,0 +1,13 @@
+{
+  "total_sales": 85000000,
+  "top_products": [
+    {"name": "Laptop Gaming", "sales": 15000000},
+    {"name": "Meja Kantor", "sales": 5000000}
+  ],
+  "sales_by_category": {
+    "Elektronik": 50000000,
+    "Furniture": 20000000,
+    "ATK": 15000000
+  },
+  "monthly_sales_trend": [120, 150, 180, 200, 250, 300, 450]
+}
