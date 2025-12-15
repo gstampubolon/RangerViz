@@ -1,6 +1,6 @@
 {
-    "name": "ranger_viz",
-    "short_name": "ranger_viz",
+    "name": "tugasmobileui",
+    "short_name": "tugasmobileui",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
