@@ -1,10 +1,12 @@
-import 'package:flutter/foundation.dart'; // Buat debugPrint
+import 'package:flutter/foundation.dart'; 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/dashboard_model.dart';
 import '../models/product_model.dart';
 
 class FirestoreService {
-  final FirebaseFirestore _db = FirebaseFirestore.instance;
+  // ✅ PERBAIKAN PENTING: Gunakan 'get'
+  // Ini mencegah error "No Firebase App" karena _db baru dipanggil saat dibutuhkan
+  FirebaseFirestore get _db => FirebaseFirestore.instance;
 
   // ==========================================
   // BAGIAN 1: DASHBOARD
@@ -16,13 +18,22 @@ class FirestoreService {
         final data = doc.data() as Map<String, dynamic>;
         return DashboardData.fromJson(data);
       } else {
-        // Anggap 404 (Not Found) secara internal logic
         debugPrint("Warning: Dokumen dashboard_stats/summary tidak ditemukan (404)");
-        throw Exception("Data Dashboard Tidak Ditemukan");
+        return DashboardData(
+          totalSales: 0,
+          monthlySalesTrend: [],
+          salesByCategory: {},
+          topProducts: [],
+          periodOfAnalysis: "-",
+          averageTransactionValue: 0,
+          totalProductsSold: 0,
+          totalCustomers: 0,
+          bestSellerProduct: "-",
+          topCategory: "-",
+        );
       }
     } catch (e) {
       debugPrint("Error 500 (Dashboard): $e");
-      // Return data dummy aman
       return DashboardData(
         totalSales: 0,
         monthlySalesTrend: [],
